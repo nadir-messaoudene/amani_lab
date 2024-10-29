@@ -103,7 +103,7 @@
 
 
 
-        <menuitem id="dental_prescription_child" action="action_medical_prescription_order"
-            name="Prescriptions" parent="menu_patients" sequence="2" />
+<!--        <menuitem id="dental_prescription_child" action="action_medical_prescription_order"-->
+<!--            name="Prescriptions" parent="menu_patients" sequence="2" />-->
 
 </odoo>

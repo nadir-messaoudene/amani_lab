@@ -15,6 +15,8 @@ class res_partner(models.Model):
     is_pharmacy = fields.Boolean(string="Pharmacy")
     patient_insurance_ids = fields.One2many('medical.insurance','patient_id')
     is_institution = fields.Boolean('Institution')
+    is_clique_laboratory = fields.Boolean('Clinique ou laboratoir')
+    is_courier = fields.Boolean('Coursier')
     company_insurance_ids = fields.One2many('medical.insurance','insurance_compnay_id','Insurance')
     reference = fields.Char('ID Number')
 

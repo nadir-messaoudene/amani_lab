@@ -2,7 +2,7 @@
 <openerp>                 
         <menuitem 
         	id="main_menu_hospital_management"
-        	name="Hospital Management"
+        	name="Laboratory Management"
             web_icon="basic_hms,static/description/icon.png"
            />
 
