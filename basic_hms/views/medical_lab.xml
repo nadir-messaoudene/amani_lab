@@ -106,8 +106,9 @@
 <!--                        </notebook>-->
 
                         <group string="Information sur les résultats">
-                            <field name="notice" />
-                            <field name="results" />
+                            <field name="notice" widget="ckeditor"/>
+
+                            <field name="results" widget="ckeditor"/>
                         </group>
                     </sheet>
                     <sheet>

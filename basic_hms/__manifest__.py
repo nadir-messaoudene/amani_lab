@@ -94,13 +94,10 @@
         'report/patient_vaccinations_document_report.xml',
         'report/prescription_demo_report.xml',
     ],
-    "author": "BrowseInfo",
-    'website': "https://www.browseinfo.com/demo-request?app=basic_hms&version=17&edition=Community",
     "installable": True,
     "application": True,
     "auto_install": False,
     "images": ["static/description/Banner.gif"],
-    'live_test_url': 'https://www.browseinfo.com/demo-request?app=basic_hms&version=17&edition=Community',
     "license":'OPL-1',
 
 }

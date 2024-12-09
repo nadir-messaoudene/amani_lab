@@ -43,9 +43,9 @@ class medical_lab(models.Model):
 
     status = fields.Selection([
         ('draft', 'Brouillon'),
+        ('blocked', 'Bloque recupéré'),
         ('validation', 'Validation'),
         ('email', 'mail envoyé'),
-        ('blocked', 'bloque recupéré'),
     ],compute='_compute_validation', default='draft')
     tag_ids = fields.Many2many(
         'crm.tag', 'crm_tag_rel', 'lead_id', 'tag_id', string='Tags',
