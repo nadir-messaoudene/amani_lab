@@ -12,7 +12,7 @@ class medical_lab(models.Model):
     _description = 'Medical Lab'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    name = fields.Char("Id")
+    name = fields.Char(string="Id", readonly=True)
     test_id = fields.Many2one('medical.test_type', _("Type de prélèvements"), required=True)
     date_analysis = fields.Datetime(_("Date de l'Analysis"), default=datetime.now())
     patient_id = fields.Many2one('medical.patient', _('Patient'), required=True)
@@ -30,26 +30,24 @@ class medical_lab(models.Model):
     nbr_antibody = fields.Integer("Nombre d'anticorps")
     institution_partner_id = fields.Many2one('res.partner', domain=[('is_clique_laboratory', '=', True)],
                                              string='Clinique/laboratoir', required=True)
-
     courier_id = fields.Many2one('res.partner', domain=[('is_courier', '=', True)],
-                                             string='Coursier', required=True)
-
+                                 string='Coursier', required=True)
     date_macroscopy = fields.Datetime(_('Date de la macroscopie'), default=datetime.now())
     date_technic = fields.Datetime(_('Date de la technique'), default=datetime.now())
     date_lecture = fields.Datetime(_('Date de la lecture'), default=datetime.now())
     IHC = fields.Boolean(_("IHC ?"), default=False)
     sent = fields.Boolean(_("Envoyé ?"), default=False)
     validation = fields.Boolean(_("validation ?"), default=False)
-
     status = fields.Selection([
         ('draft', 'Brouillon'),
         ('blocked', 'Bloque recupéré'),
         ('validation', 'Validation'),
         ('email', 'mail envoyé'),
-    ],compute='_compute_validation', default='draft')
+    ], compute='_compute_validation', default='draft')
     tag_ids = fields.Many2many(
         'crm.tag', 'crm_tag_rel', 'lead_id', 'tag_id', string='Tags',
         help="Classify and analyze your lead/opportunity categories like: Training, Service")
+
     @api.onchange('status')
     def _compute_validation(self):
         if self.status == 'validation':

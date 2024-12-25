@@ -9,6 +9,7 @@
                         <notebook> 
                             <page string="Main Info">
                                 <group colspan="4" col="4">
+                                    <field name="title" required="1"/>
                                     <field name="partner_id" required="1"
                                         context="{'default_is_doctor': 1, 'search_default_is_doctor': 1}" />
                                     <field name="institution_partner_id"

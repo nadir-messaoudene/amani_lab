@@ -8,7 +8,7 @@ class bed_transfer(models.Model):
     _name = 'bed.transfer'
     _description = "Bed Transfer"
 
-    name = fields.Char("Name")
+    name = fields.Char(string="Name")
     date = fields.Datetime(string='Date')
     bed_from = fields.Char(string='From')
     bed_to = fields.Char(string='To')
